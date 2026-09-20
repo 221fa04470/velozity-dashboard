@@ -56,14 +56,13 @@ Three roles. Permissions enforced on the API. A WebSocket feed that only ever sh
 
 <br />
 
-## 🌐 Live links
+## 🔗 Live Links
 
-| | |
+| Resource | Link |
 |---|---|
-| **Web app** | _add your Vercel URL_ |
-| **API health check** | _add your Render URL_`/api/health` |
-| **Repository** | you're here |
-
+| 🌐 **Web App** | https://client-beige-five-76.vercel.app/ |
+| ❤️ **API Health Check** | https://velozity-dashboard-nas3.onrender.com/api/health |
+| 💻 **Repository** | https://github.com/221fa04470/velozity-dashboard |
 > The API runs on a free tier that sleeps when idle. If the first load is slow, give it about 30 seconds.
 
 ### Try it in two windows
