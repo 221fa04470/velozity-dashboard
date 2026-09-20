@@ -1,0 +1,55 @@
+# One command local setup:  cp .env.example .env  &&  docker compose up --build
+# Web app: http://localhost:5173   API: http://localhost:4000   Postgres: localhost:5432
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: velozity
+      POSTGRES_PASSWORD: velozity
+      POSTGRES_DB: velozity
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U velozity -d velozity"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  server:
+    build: ./server
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "4000:4000"
+    environment:
+      # "development" so the refresh cookie is not flagged Secure (plain http://localhost).
+      NODE_ENV: development
+      PORT: 4000
+      DATABASE_URL: postgresql://velozity:velozity@db:5432/velozity?schema=public
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?Copy .env.example to .env first}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?Copy .env.example to .env first}
+      CLIENT_ORIGIN: http://localhost:5173
+      COOKIE_SAMESITE: lax
+      SEED_PASSWORD: ${SEED_PASSWORD:-Password123!}
+
+  client:
+    image: node:22-alpine
+    working_dir: /app
+    depends_on:
+      - server
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+      - client_node_modules:/app/node_modules
+    environment:
+      VITE_PROXY_TARGET: http://server:4000
+      VITE_SOCKET_URL: http://localhost:4000
+    command: sh -c "npm install && npm run dev"
+
+volumes:
+  pgdata:
+  client_node_modules:
