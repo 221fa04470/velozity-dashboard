@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="t d">
+  <title id="t">Velozity Projects</title>
+  <desc id="d">Real-time client project dashboard with role-based access and a live activity feed</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#051F1B"/>
+      <stop offset="0.55" stop-color="#0C3B33"/>
+      <stop offset="1" stop-color="#14574B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C8F03C"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.88" cy="0.15" r="0.55">
+      <stop offset="0" stop-color="#C8F03C" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#C8F03C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.05" cy="1" r="0.5">
+      <stop offset="0" stop-color="#5EEAD4" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="320" rx="22" fill="url(#bg)"/>
+  <rect width="1280" height="320" rx="22" fill="url(#grid)"/>
+  <rect width="1280" height="320" rx="22" fill="url(#glow)"/>
+  <rect width="1280" height="320" rx="22" fill="url(#glow2)"/>
+
+  <!-- brand mark -->
+  <rect x="64" y="58" width="60" height="60" rx="16" fill="#14574B" stroke="#C8F03C" stroke-opacity="0.5"/>
+  <path d="M82 78l12 20 12-20" fill="none" stroke="#C8F03C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="142" y="98" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#C8F03C" letter-spacing="3">VELOZITY</text>
+
+  <text x="64" y="186" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="66" font-weight="800" fill="#FFFFFF">Projects, <tspan fill="url(#accent)">live.</tspan></text>
+  <text x="66" y="228" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="25" fill="#BFE3D8">Real-time client project dashboard with role-based access</text>
+
+  <!-- chips -->
+  <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#E6F7F1">
+    <rect x="64" y="256" width="168" height="34" rx="17" fill="#ffffff" fill-opacity="0.09" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="84" y="278">WebSocket live feed</text>
+    <rect x="244" y="256" width="150" height="34" rx="17" fill="#ffffff" fill-opacity="0.09" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="264" y="278">JWT + RBAC API</text>
+    <rect x="406" y="256" width="188" height="34" rx="17" fill="#ffffff" fill-opacity="0.09" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="426" y="278">PostgreSQL + Prisma</text>
+  </g>
+
+  <!-- floating activity cards -->
+  <g font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+    <g>
+      <rect x="800" y="44" width="420" height="72" rx="16" fill="#ffffff" fill-opacity="0.11" stroke="#C8F03C" stroke-opacity="0.55"/>
+      <circle cx="838" cy="80" r="20" fill="#14574B" stroke="#C8F03C" stroke-opacity="0.6"/>
+      <text x="838" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">RK</text>
+      <text x="872" y="76" font-size="16" font-weight="600" fill="#FFFFFF">Ravi moved Task #12</text>
+      <text x="872" y="98" font-size="14" fill="#BFE3D8">In Progress → In Review · just now</text>
+      <circle cx="1188" cy="80" r="6" fill="#C8F03C">
+        <animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1188" cy="80" r="6" fill="none" stroke="#C8F03C">
+        <animate attributeName="r" values="6;16" dur="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <g>
+      <rect x="776" y="132" width="420" height="72" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <circle cx="814" cy="168" r="20" fill="#0C3B33" stroke="#5EEAD4" stroke-opacity="0.6"/>
+      <text x="814" y="173" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">PN</text>
+      <text x="848" y="164" font-size="16" font-weight="600" fill="#FFFFFF">Priya assigned Task #14</text>
+      <text x="848" y="186" font-size="14" fill="#BFE3D8">to Meera · 2 mins ago</text>
+    </g>
+    <g>
+      <rect x="800" y="220" width="420" height="72" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <circle cx="838" cy="256" r="20" fill="#B42318"/>
+      <text x="838" y="263" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">!</text>
+      <text x="872" y="252" font-size="16" font-weight="600" fill="#FFFFFF">Task #7 is now overdue</text>
+      <text x="872" y="274" font-size="14" fill="#BFE3D8">flagged by the scheduler · 5 mins ago</text>
+    </g>
+  </g>
+</svg>
